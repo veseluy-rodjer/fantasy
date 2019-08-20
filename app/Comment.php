@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Post;
+use App\Test;
 use App\User;
 
 /**
@@ -17,12 +17,12 @@ class Comment extends Model
     protected $guarded = [];
 
     /**
-     * Связь с моделью Post
+     * Связь с моделью Test
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function post()
+    public function test()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Test::class);
     }
 
     /**
