@@ -58,10 +58,10 @@ class MyVerified extends Notification implements ShouldQueue
         }
 
         return (new MailMessage)
-            ->subject(Lang::getFromJson('Verify Email Address'))
-            ->line(Lang::getFromJson('Please click the button below to verify your email address.'))
-            ->action(Lang::getFromJson('Verify Email Address'), $verificationUrl)
-            ->line(Lang::getFromJson('If you did not create an account, no further action is required.'));
+            ->subject(__('Verify Email Address'))
+            ->line(__('Please click the button below to verify your email address.'))
+            ->action(__('Verify Email Address'), $verificationUrl)
+            ->line(__('If you did not create an account, no further action is required.'));
     }
 
     /**

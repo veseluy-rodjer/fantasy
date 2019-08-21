@@ -1,3 +1,7 @@
 {
-	"Verify Email Address": "Пiдтвердження эл. адреси"
+	"Verify Email Address": "Пiдтвердження эл. адреси",
+	"Please click the button below to verify your email address.": "Будь ласка, кликнить на кнопке нижче для пiдтвердження эл. адреси.",
+	"If you did not create an account, no further action is required.": "Якщо ты не создавав акаунт, просто проiгноруй це повiдомлення.",
+	"Hello!": "Привiт!"
+
 }
