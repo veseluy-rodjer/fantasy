@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::delete('admin/tests/arr-delete', 'Admin\TestController@arrDelete')->name('tests.arrDelete');
+Route::resource('admin/tests', 'Admin\TestController');
