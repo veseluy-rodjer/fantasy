@@ -1,2 +1,210 @@
 [2019-08-23 00:27:05][4nurWkMNGJlmtBLBuc6omou85WLv5JtN] Processing: App\Notifications\MyVerified
 [2019-08-23 00:27:07][4nurWkMNGJlmtBLBuc6omou85WLv5JtN] Processed:  App\Notifications\MyVerified
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+[2019-08-24 10:36:24][SGM04a3r0Izycdf8gJZ4t7XcD30mCl96] Processing: App\Notifications\MyVerified
+[2019-08-24 10:36:27][SGM04a3r0Izycdf8gJZ4t7XcD30mCl96] Processed:  App\Notifications\MyVerified
+[2019-08-24 10:42:42][abRR9iJujrewWgtnAq31CDFzOvdk7Amz] Processing: App\Notifications\MyVerified
+[2019-08-24 10:42:43][abRR9iJujrewWgtnAq31CDFzOvdk7Amz] Processed:  App\Notifications\MyVerified
+[2019-08-24 10:45:11][RB664rSyMY4NW3C6FMTZVGPupzPwjoBN] Processing: App\Notifications\MyVerified
+[2019-08-24 10:45:12][RB664rSyMY4NW3C6FMTZVGPupzPwjoBN] Processed:  App\Notifications\MyVerified
+[2019-08-24 10:52:33][1stDh8zpJEapX0EIaSs9yLoSZkuhp40O] Processing: App\Notifications\MyVerified
+[2019-08-24 10:52:35][1stDh8zpJEapX0EIaSs9yLoSZkuhp40O] Processed:  App\Notifications\MyVerified
+[2019-08-24 10:56:29][3jeWU8KQtS7xj7KhPjB76eL0oMGHxlPq] Processing: App\Notifications\MyVerified
+[2019-08-24 10:56:33][3jeWU8KQtS7xj7KhPjB76eL0oMGHxlPq] Processed:  App\Notifications\MyVerified
+[2019-08-24 11:02:02][HxYaGsGa6abDkFLDAUm81RO7de1ZpaEu] Processing: App\Notifications\MyVerified
+[2019-08-24 11:02:04][HxYaGsGa6abDkFLDAUm81RO7de1ZpaEu] Processed:  App\Notifications\MyVerified
+[2019-08-24 11:06:44][XhHz2Fic8KYOoWlcD30BM8zIHPSXKILf] Processing: App\Notifications\MyVerified
+[2019-08-24 11:06:47][XhHz2Fic8KYOoWlcD30BM8zIHPSXKILf] Processed:  App\Notifications\MyVerified
+[2019-08-24 11:07:55][HGti8namrOOW0D2ZdKuOYfOyvGgvZgYP] Processing: App\Notifications\MyVerified
+[2019-08-24 11:07:56][HGti8namrOOW0D2ZdKuOYfOyvGgvZgYP] Processed:  App\Notifications\MyVerified
+[2019-08-24 11:17:38][nbrVujsakA8YLSVtAfz6M7yS56y4vVZ2] Processing: App\Notifications\MyVerified
+[2019-08-24 11:17:39][nbrVujsakA8YLSVtAfz6M7yS56y4vVZ2] Processed:  App\Notifications\MyVerified
+[2019-08-24 11:28:12][4Bi5zMUCJo3YoRrNmJVzvgCKaAA1KZuG] Processing: App\Notifications\MyVerified
+[2019-08-24 11:28:16][4Bi5zMUCJo3YoRrNmJVzvgCKaAA1KZuG] Processed:  App\Notifications\MyVerified
+[2019-08-24 11:34:09][cqhAN7mTPkF3lCNMqhAo6RWMOXuNJBi8] Processing: App\Notifications\MyVerified
+[2019-08-24 11:34:13][cqhAN7mTPkF3lCNMqhAo6RWMOXuNJBi8] Processed:  App\Notifications\MyVerified
+[2019-08-24 11:55:08][VkgqX4g2Y4JhFU9TC46BcP64hAQJsZWe] Processing: App\Notifications\MyVerified
+[2019-08-24 11:55:10][VkgqX4g2Y4JhFU9TC46BcP64hAQJsZWe] Processed:  App\Notifications\MyVerified
