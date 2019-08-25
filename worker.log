@@ -208,3 +208,187 @@
 [2019-08-24 11:34:13][cqhAN7mTPkF3lCNMqhAo6RWMOXuNJBi8] Processed:  App\Notifications\MyVerified
 [2019-08-24 11:55:08][VkgqX4g2Y4JhFU9TC46BcP64hAQJsZWe] Processing: App\Notifications\MyVerified
 [2019-08-24 11:55:10][VkgqX4g2Y4JhFU9TC46BcP64hAQJsZWe] Processed:  App\Notifications\MyVerified
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
+
+   Predis\Connection\ConnectionException  : Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151|      */
+    152|     protected function onConnectionError($message, $code = null)
+    153|     {
+    154|         CommunicationException::handle(
+  > 155|             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156|         );
+    157|     }
+    158| 
+    159|     /**
+
+  Exception trace:
+
+  1   Predis\Connection\AbstractConnection::onConnectionError("Error while reading line from the server.")
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/StreamConnection.php:314
+
+  2   Predis\Connection\StreamConnection::read()
+      /var/www/html/laravel/fantasy/vendor/predis/predis/src/Connection/AbstractConnection.php:120
+
+  Please use the argument -v to see more details.
