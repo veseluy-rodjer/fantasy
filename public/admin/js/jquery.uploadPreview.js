@@ -76,3 +76,16 @@
         }
     });
 })(jQuery);
+
+            $(document).ready(function() {
+            $.uploadPreview({
+            input_field: "#photo",   // По умолчанию: .image-upload
+            preview_box: "#div-photo",  // По умолчанию: .image-preview
+            label_field: "#label-photo",    // По умолчанию: .image-label
+            label_default: "Загрузить",   // По умолчанию: Choose File
+            label_selected: "Загрузить",  // По умолчанию: Change File
+            no_label: false,                // По умолчанию: false
+            success_callback: null          // По умолчанию: null
+            });
+            });
+            

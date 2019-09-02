@@ -75,7 +75,7 @@ class MyVerified extends Notification implements ShouldQueue
         return URL::temporarySignedRoute(
             'verification.verify',
             Carbon::now()->addMinutes(Config::get('auth.verification.expire', 60)),
-            ['id' => $notifiable->getKey()]
+            ['id' => $notifiable->getKey(), 'lang' => \App::getLocale()]
         );
     }
 
