@@ -22,44 +22,49 @@
     <style>
 		body {
 			background-image: url(/images/header.jpg);
-			{{-- background-size: cover; --}}
-			{{-- height: auto; --}}
-			{{-- background-repeat: no-repeat; --}}
-			{{-- width: 100%; --}}
-			{{-- padding-top: 60%; --}}
-			{{-- outline: 1px solid red; --}}
+			color: white;
+		}
+		footer {
+			position: fixed; /* Фиксированное положение */
+			bottom: 0; /* Прижимаем к низу экрана */
 		}
     </style>
 </head>
 <body>
 <!-- HEADER -->
 	<header class="header">
-		<div class="container-fluid background-header">
+		<div class="container-fluid">
 			<div class="row">
-			    <div class="col-sm-3 logo">LOGO
-					<img src="{{ asset('/images/logo.png') }}">
+			    <div class="col-sm-auto logo">
+					<img src="{{ asset('/images/logo.png') }} " style="height: 100px">
 				</div>
-				<nav class="col-sm-7 top-nav">TOP-NAV</nav>
-				<div class="col-sm-2 social">SOCIAL</div>
+				<nav class="col-sm-7 nav">NAV</nav>
+				<div class="col-sm-2 auth">auth</div>
 		    </div>
 		</div>
 	</header>
 <!-- MAIN -->
 	<main class="main">
 		<div class="container-fluid">
-@yield('content')
-
 			<div class="row">
-				<aside class="col-md-9 col-xl-3 order-xl-4 left">LEFT</aside>
-				<article class="col-xl-6 order-xl-5 article">ARTICLE</article>
-				<aside class="col-xl-3 order-xl-6 right">RIGHT</aside>
+				<aside class="col-sm-2">
+					@include('layouts.aside_left')
+				</aside>
+				<article class="col-sm-8">
+					@yield('content')
+				</article>
+				<aside class="col-sm-2">
+					@include('layouts.aside_right')
+				</aside>
 			</div>
 		</div>
 	</main>
 <!-- FOOTER -->
 	<footer class="footer">
 		<div class="container-fluid">
+			<div class="row">
     FOOTER
+			</div>
 		</div>
 	</footer>  
 
