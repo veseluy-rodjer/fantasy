@@ -20,17 +20,21 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
-		.fone {
+		.background-header {
 			background-image: url(/images/header.jpg);
-			background-size: 100%;
-			height: 1000px;
+			background-size: cover;
+			height: auto;
+			background-repeat: no-repeat;
+			{{-- width: 100%; --}}
+			padding-top: 60%;
+			{{-- outline: 1px solid red; --}}
 		}
     </style>
 </head>
 <body>
 <!-- HEADER -->
 	<header class="header">
-		<div class="container-fluid fone">
+		<div class="container-fluid background-header">
 			<div class="row">
 			    <div class="col-sm-3 logo">LOGO</div>
 				<nav class="col-sm-7 top-nav">TOP-NAV</nav>
@@ -41,14 +45,16 @@
 <!-- MAIN -->
 	<main class="main">
 		<div class="container-fluid">
-		    <div class="row">
-				<div class="col-xl-6 order-xl-1 hero">HERO</div>
-				<div class="col-xl-3 order-xl-2 action">ACTION</div>
-			    <aside class="col-md-9 col-xl-3 order-xl-4 left">LEFT</aside>
-		        <div class="col-md-3 order-xl-3 ad">AD</div>
-			    <article class="col-xl-6 order-xl-5 article">ARTICLE</article>
-				<aside class="col-xl-3 order-xl-6 right">RIGHT</aside>
-		    </div>
+@yield('content')
+
+				{{-- <div class="row"> --}}
+				{{-- <div class="col-xl-6 order-xl-1 hero">HERO</div> --}}
+				{{-- <div class="col-xl-3 order-xl-2 action">ACTION</div> --}}
+				{{-- <aside class="col-md-9 col-xl-3 order-xl-4 left">LEFT</aside> --}}
+				{{-- <div class="col-md-3 order-xl-3 ad">AD</div> --}}
+				{{-- <article class="col-xl-6 order-xl-5 article">ARTICLE</article> --}}
+				{{-- <aside class="col-xl-3 order-xl-6 right">RIGHT</aside> --}}
+			{{-- </div> --}}
 		</div>
 	</main>
 <!-- FOOTER -->
