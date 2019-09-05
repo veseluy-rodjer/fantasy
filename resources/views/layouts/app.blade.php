@@ -24,22 +24,41 @@
 			background-image: url(/images/header.jpg);
 			color: white;
 		}
+		.nav a {
+			color: white;
+		}
 		footer {
 			position: fixed; /* Фиксированное положение */
 			bottom: 0; /* Прижимаем к низу экрана */
 		}
     </style>
+
 </head>
 <body>
 <!-- HEADER -->
 	<header class="header">
 		<div class="container-fluid">
 			<div class="row">
-			    <div class="col-sm-auto logo">
+			    <div class="col-sm-2">
 					<img src="{{ asset('/images/logo.png') }} " style="height: 100px">
 				</div>
-				<nav class="col-sm-7 nav">NAV</nav>
-				<div class="col-sm-2 auth">auth</div>
+				<nav class="col-sm-7">
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
+				</nav>
+				<div class="col-sm-3">auth</div>
 		    </div>
 		</div>
 	</header>
