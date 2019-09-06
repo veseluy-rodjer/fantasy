@@ -22,3 +22,6 @@ Route::get('/', 'MainController@main')->name('main');
 
 
 
+
+Route::delete('opuses/arr-delete', 'OpusController@arrDelete')->name('opuses.arrDelete');
+Route::resource('opuses', 'OpusController');

@@ -13,6 +13,9 @@ class MainController extends Controller
      */
     public function main()
     {
+		$str = 'qwertyuiop</p>asdfghjh';
+		$rez = strstr($str, 't');
+		dd($str . '   ' . $rez);
     	return view('main');
     }
     
