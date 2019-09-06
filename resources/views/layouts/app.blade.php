@@ -27,10 +27,19 @@
 		.nav a {
 			color: white;
 		}
-		footer {
-			position: fixed; /* Фиксированное положение */
-			bottom: 0; /* Прижимаем к низу экрана */
+		.dropdown-menu {
+			background-color: transparent !important;
 		}
+		.dropdown-item:active {
+			background-color: transparent !important;
+		}
+		.dropdown-item:hover {
+			background-color: transparent !important;
+		}
+		{{-- footer { --}}
+			{{-- position: fixed; /* Фиксированное положение */ --}}
+			{{-- bottom: 0; /* Прижимаем к низу экрана */ --}}
+		{{-- } --}}
     </style>
 
 </head>
@@ -43,22 +52,53 @@
 					<img src="{{ asset('/images/logo.png') }} " style="height: 100px">
 				</div>
 				<nav class="col-sm-7">
-<ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">Disabled</a>
-  </li>
-</ul>
+					<ul class="nav justify-content-center">
+						<li class="nav-item">
+							<a class="nav-link" href="#">О сайте</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Как это работает</a>
+						</li>
+						<li class="nav-item">
+						    <a class="nav-link" href="#">Отзывы</a>
+						</li>
+						<li class="nav-item">
+						    <a class="nav-link disabled" href="#">Disabled</a>
+						</li>
+					</ul>
 				</nav>
-				<div class="col-sm-3">auth</div>
+				<nav class="col-sm-3">
+					<ul class="nav justify-content-center">
+						@guest
+							<li class="nav-item">
+								<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+							</li>
+							@if (Route::has('register'))
+								<li class="nav-item">
+									<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+								</li>
+							@endif
+						@else
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+									{{ Auth::user()->name }}
+								</a>
+
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="{{ route('logout') }}"
+									   onclick="event.preventDefault();
+													 document.getElementById('logout-form').submit();">
+										{{ __('Logout') }}
+									</a>
+
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+										@csrf
+									</form>
+								</div>
+							</li>
+						@endguest
+					</ul>
+				</nav>
 		    </div>
 		</div>
 	</header>
@@ -79,70 +119,23 @@
 		</div>
 	</main>
 <!-- FOOTER -->
-	<footer class="footer">
+	<footer class="footer fixed-bottom">
 		<div class="container-fluid">
 			<div class="row">
+				<div class="col-sm-4">
+
     FOOTER
+				</div>
+				<div class="col-sm-4">
+    FOOTER
+				</div>
+				<div class="col-sm-4">
+
+    FOOTER
+				</div>
 			</div>
 		</div>
 	</footer>  
 
 </body>
-    {{-- <div id="app"> --}}
-        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"> --}}
-            {{-- <div class="container"> --}}
-                {{-- <a class="navbar-brand" href="{{ url('/') }}"> --}}
-                    {{-- {{ config('app.name', 'Laravel') }} --}}
-                {{-- </a> --}}
-                {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}"> --}}
-                    {{-- <span class="navbar-toggler-icon"></span> --}}
-                {{-- </button> --}}
-{{--  --}}
-                {{-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> --}}
-                    {{-- <!-- Left Side Of Navbar --> --}}
-                    {{-- <ul class="navbar-nav mr-auto"> --}}
-{{--  --}}
-                    {{-- </ul> --}}
-{{--  --}}
-                    {{-- <!-- Right Side Of Navbar --> --}}
-                    {{-- <ul class="navbar-nav ml-auto"> --}}
-                        {{-- <!-- Authentication Links --> --}}
-                        {{-- @guest --}}
-                            {{-- <li class="nav-item"> --}}
-                                {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> --}}
-                            {{-- </li> --}}
-                            {{-- @if (Route::has('register')) --}}
-                                {{-- <li class="nav-item"> --}}
-                                    {{-- <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
-                                {{-- </li> --}}
-                            {{-- @endif --}}
-                        {{-- @else --}}
-                            {{-- <li class="nav-item dropdown"> --}}
-                                {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> --}}
-                                    {{-- {{ Auth::user()->name }} <span class="caret"></span> --}}
-                                {{-- </a> --}}
-{{--  --}}
-                                {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> --}}
-                                    {{-- <a class="dropdown-item" href="{{ route('logout') }}" --}}
-                                       {{-- onclick="event.preventDefault(); --}}
-                                                     {{-- document.getElementById('logout-form').submit();"> --}}
-                                        {{-- {{ __('Logout') }} --}}
-                                    {{-- </a> --}}
-{{--  --}}
-                                    {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> --}}
-                                        {{-- @csrf --}}
-                                    {{-- </form> --}}
-                                {{-- </div> --}}
-                            {{-- </li> --}}
-                        {{-- @endguest --}}
-                    {{-- </ul> --}}
-                {{-- </div> --}}
-            {{-- </div> --}}
-        {{-- </nav> --}}
-{{--  --}}
-        {{-- <main class="py-4"> --}}
-            {{-- @yield('content') --}}
-        {{-- </main> --}}
-    {{-- </div> --}}
-{{-- </body> --}}
 </html>
