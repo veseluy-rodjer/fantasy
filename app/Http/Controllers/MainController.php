@@ -15,21 +15,19 @@ class MainController extends Controller
     {
 		$str = 'qwer</p>tyuiop</p>as</p>dfg</p>hjh</p>fdhfgh';
 		if (substr_count($str, '/p>') < 1) {
-			dd($str);
 			return $str;
 		}
-		$reg = '/(.*\/p>.*){2}/U';
+		$reg = '/(.*\/p>.*){3}/U';
 		$res = [];
 		preg_match_all($reg, $str, $matches);
-		dd($matches);
 		foreach ($matches[0] as $match) {
 			// \App\Opus::create([''])
 			$res[] = $match;
+			dd(str_replace($match, '', $str));
 		}
 
-		$rez = strstr($str, 't');
 		// dd(strlen($str) . '  ' . strlen($matches[0][0]) . '  ' . $matches);
-		dd($matches);
+		dd($str);
 		// dd(strlen($str) . '  ' . strlen($matches[0][0]));
     	return view('main');
     }
