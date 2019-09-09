@@ -5,8 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use VeseluyRodjer\CrudGenerator\HasTranslations;
 
-
-class Opus extends Model
+class Title extends Model
 {
     use HasTranslations;
     
@@ -19,7 +18,7 @@ class Opus extends Model
      *
      * @var string
      */
-    protected $table = 'opuses';
+    protected $table = 'titles';
 
     /**
     * The database primary key value.
@@ -38,18 +37,18 @@ class Opus extends Model
 //    protected $hidden = 
 
     /**
-     * Get the user that owns the opus.
+     * Get the user that owns the title.
      */
     public function user()
     {
         return $this->belongsTo('App\User');
     }
-    
+
     /**
-     * Get the title that owns the opus.
+     * Get the opuses for the title.
      */
-    public function title()
+    public function opuses()
     {
-        return $this->belongsTo('App\Title');
+        return $this->hasMany('App\Opus');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Title;
 use App\Opus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -27,19 +28,22 @@ class OpusController extends Controller
 		if (!empty($keyword)) {
 			if (!empty($sort)) {
 				if ($toggle !== false) {
-					$opuses = Opus::where('title', 'LIKE', "%$keyword%")
-                ->orWhere('text', 'LIKE', "%$keyword%")
-                ->orderBy($sort, 'desc')->paginate($perPage);
+					$titles = Title::where('title', 'LIKE', "%$keyword%")
+						->orderBy($sort, 'desc')->paginate($perPage);
+					$opuses = Opus::where('page', 'LIKE', "%$keyword%")
+						->orderBy($sort, 'desc')->paginate($perPage);
 				}
 				else {
-					$opuses = Opus::where('title', 'LIKE', "%$keyword%")
-                ->orWhere('text', 'LIKE', "%$keyword%")
-                ->orderBy($sort)->paginate($perPage);
+					$titles = Title::where('title', 'LIKE', "%$keyword%")
+						->orderBy($sort)->paginate($perPage);
+					$opuses = Opus::where('page', 'LIKE', "%$keyword%")
+						->orderBy($sort)->paginate($perPage);
 				}
 			}
 			else {
-				$opuses = Opus::where('title', 'LIKE', "%$keyword%")
-                ->orWhere('text', 'LIKE', "%$keyword%")
+				$titles = Title::where('title', 'LIKE', "%$keyword%")
+                ->latest()->paginate($perPage);
+				$opuses = Opus::where('page', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
 			}
 		}
@@ -47,16 +51,19 @@ class OpusController extends Controller
 			if (!empty($sort)) {
 				if ($toggle !== false) {
 					$opuses = Opus::orderBy($sort, 'desc')->paginate($perPage);
+					$titles = Title::orderBy($sort, 'desc')->paginate($perPage);
 				}
 				else {
 					$opuses = Opus::orderBy($sort)->paginate($perPage);
+					$titles = Title::orderBy($sort)->paginate($perPage);
 				}
 			}
 			else {
 				$opuses = Opus::latest()->paginate($perPage);
+				$titles = Title::latest()->paginate($perPage);
 			}
         }
-        return view('opuses.opuses.index', compact('opuses'));
+        return view('opuses.index', compact('titles', 'opuses'));
     }
 
     /**
@@ -66,7 +73,7 @@ class OpusController extends Controller
      */
     public function create()
     {
-        return view('opuses.opuses.create');
+        return view('opuses.create');
     }
 
     /**
@@ -78,8 +85,12 @@ class OpusController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $requestData = $request->all();
+        $user = \Auth::user();
+	    $request->validate([
+        'title' => 'required|string|max:255',
+        'page' => 'required|string',
+	    ]);
+		$user->titles()->create(['title' => $request->title]);
         
         $store = Opus::create($requestData);
         
@@ -96,7 +107,7 @@ class OpusController extends Controller
     public function show($id)
     {
         $opus = Opus::findOrFail($id);
-        return view('opuses.opuses.show', compact('opus'));
+        return view('opuses.show', compact('opus'));
     }
 
     /**
@@ -109,7 +120,7 @@ class OpusController extends Controller
     public function edit($id)
     {
         $opus = Opus::findOrFail($id);
-        return view('opuses.opuses.edit', compact('opus'));
+        return view('opuses.edit', compact('opus'));
     }
 
     /**
@@ -122,7 +133,11 @@ class OpusController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+	    $request->validate([
+        'title' => 'required|string|max:255',
+        'page' => 'required|string',
+		]);
+
         $up = Opus::findOrFail($id);
         $requestData = $request->all();
         

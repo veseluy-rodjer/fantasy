@@ -13,17 +13,17 @@
         {!! '<p class="help-block">' . $message . '</p>' !!}
     @endforeach
 </div>
-<div class="form-group {{ $errors->has('text') ? 'has-error' : ''}}">
-    <label for="text">{{ 'Text' }}</label>
-    @if (!empty(old("text")))
-    <textarea class="form-control summernote" rows="5" name="text" type="textareaOnly" id="text">{!! old("text") !!}</textarea>
+<div class="form-group {{ $errors->has('page') ? 'has-error' : ''}}">
+    <label for="page">{{ 'Page' }}</label>
+    @if (!empty(old("page")))
+    <textarea class="form-control summernote" rows="5" name="page" type="textareaOnly" id="page">{!! old("page") !!}</textarea>
 @else
-    <textarea class="form-control summernote" rows="5" name="text" type="textareaOnly" id="text">{!! $opus->text ?? '' !!}</textarea>
+    <textarea class="form-control summernote" rows="5" name="page" type="textareaOnly" id="page">{!! $opus->page ?? '' !!}</textarea>
 @endif
 
 
 
-    @foreach ($errors->get('text') as $message)
+    @foreach ($errors->get('page') as $message)
         {!! '<p class="help-block">' . $message . '</p>' !!}
     @endforeach
 </div>

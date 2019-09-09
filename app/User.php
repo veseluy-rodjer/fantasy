@@ -43,4 +43,19 @@ class User extends Authenticatable implements MustVerifyEmail
 		$this->notify((new \App\Notifications\MyVerified)->locale($locale));
     }
 
+    /**
+     * Get the titles for the user.
+     */
+    public function titles()
+    {
+        return $this->hasMany('App\Title');
+    }
+
+    /**
+     * Get the opuses for the user.
+     */
+    public function opuses()
+    {
+        return $this->hasMany('App\Opus');
+    }
 }
