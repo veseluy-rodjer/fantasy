@@ -90,10 +90,25 @@ class OpusController extends Controller
         'title' => 'required|string|max:255',
         'page' => 'required|string',
 	    ]);
-		$user->titles()->create(['title' => $request->title]);
-        
-        $store = Opus::create($requestData);
-        
+		$title = $user->titles()->create(['title' => $request->title]);
+		$pages = $request->page;
+		if (substr_count($pages, ' ') < 300) {
+			$user->opuses()->create(['page' => $pages, 'number_page' => 1, 'title_id' => $title->id]);
+			return redirect()->route('opuses.index')->with('flash_message', 'Opus added!');
+		}
+		$reg = '/(.*\s){300}/U';
+		preg_match_all($reg, $pages, $matches);
+		$n = 0;
+		foreach ($matches[0] as $match) {
+			$n += 1;
+			$user->opuses()->create(['page' => $match, 'number_page' => $n, 'title_id' => $title->id]);
+			$count = strlen($match);
+
+			$pages = substr($pages, $count);
+		}
+		if ($pages !== '') {
+			$user->opuses()->create(['page' => $pages, 'number_page' => $n + 1, 'title_id' => $title->id]);
+		}
         return redirect()->route('opuses.index')->with('flash_message', 'Opus added!');
     }
 
