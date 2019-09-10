@@ -63,7 +63,7 @@
 						    <a class="nav-link" href="#">Отзывы</a>
 						</li>
 						<li class="nav-item">
-						    <a class="nav-link disabled" href="#">Disabled</a>
+							<a class="nav-link" href="{{ route('home') }}">Личный кабинет</a>
 						</li>
 					</ul>
 				</nav>
@@ -107,7 +107,11 @@
 		<div class="container-fluid">
 			<div class="row">
 				<aside class="col-sm-2">
-					@include('layouts.aside_left')
+					@if (\Request::route()->named('home'))
+						@include('layouts.aside_left_home')
+					@else
+						@include('layouts.aside_left')
+					@endif
 				</aside>
 				<article class="col-sm-8">
 					@yield('content')
