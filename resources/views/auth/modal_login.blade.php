@@ -1,13 +1,16 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card bg-secondary">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
+<!-- The Modal -->
+<div class="modal fade" id="modal-login" tabindex='-1'>
+	<div class="modal-dialog">
+		<div class="modal-content modal-windows">
+      
+	        <!-- Modal Header -->
+		    <div class="modal-header">
+				<h4 class="modal-title mx-auto">{{ __('Login') }}</h4>
+				<button type="button" class="close text-white" data-dismiss="modal">×</button>
+	        </div>
+        
+		    <!-- Modal body -->
+			<div class="modal-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -58,16 +61,16 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link text-white" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
+	        </div>
+
+		</div>
+	</div>
 </div>
-@endsection
+

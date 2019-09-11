@@ -36,6 +36,9 @@
 		.dropdown-item:hover {
 			background-color: transparent !important;
 		}
+		.modal-windows {
+			background-color: black;
+		}
 		{{-- footer { --}}
 			{{-- position: fixed; /* Фиксированное положение */ --}}
 			{{-- bottom: 0; /* Прижимаем к низу экрана */ --}}
@@ -71,7 +74,7 @@
 					<ul class="nav justify-content-center">
 						@guest
 							<li class="nav-item">
-								<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+								<a class="nav-link" data-toggle="modal" href="#modal-login">{{ __('Login') }}</a>
 							</li>
 							@if (Route::has('register'))
 								<li class="nav-item">
@@ -140,6 +143,10 @@
 			</div>
 		</div>
 	</footer>  
+
+	@include('auth.modal_login')
+	@include('auth.modal_register')
+	@include('auth.modal_verify')
 
 </body>
 </html>
