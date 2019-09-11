@@ -37,14 +37,26 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-	/**
-	 * Get the post register / login redirect path
-	 *
-	 * @return string
-	 */
-	// protected function redirectTo()
-	// {
-		// return '/';
-	// }
+    /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLoginForm()
+    {
+		$prevHttp = url()->previous();
+
+        return response()->view('auth.login')->cookie('prevHttp', $prevHttp, 60);
+    }
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+	protected function redirectTo()
+	{
+		return \Cookie::get('prevHttp');
+	}
 	
 }
