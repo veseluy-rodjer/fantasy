@@ -51,10 +51,10 @@
 	<header class="header">
 		<div class="container-fluid">
 			<div class="row">
-			    <div class="col-sm-2">
-					<img src="{{ asset('/images/logo.png') }} " style="height: 100px">
+			    <div class="col-sm-1">
+					<img src="{{ asset('/images/logo.png') }} " style="width: 100%">
 				</div>
-				<nav class="col-sm-7">
+				<nav class="col-sm-8">
 					<ul class="nav justify-content-center">
 						<li class="nav-item">
 							<a class="nav-link" href="#">О сайте</a>
