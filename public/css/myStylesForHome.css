@@ -1,0 +1,27 @@
+body {
+	background-image: url(/images/home.jpg);
+	background-repeat: no-repeat;
+	background-position: 50% 20%;
+	background-size: cover;
+	color: white;
+}
+.nav a {
+	color: white;
+}
+.dropdown-menu {
+	background-color: transparent !important;
+}
+.dropdown-item:active {
+	background-color: transparent !important;
+}
+.dropdown-item:hover {
+	background-color: transparent !important;
+}
+.modal-windows {
+	background-color: black;
+}
+{{-- footer { --}}
+	{{-- position: fixed; /* Фиксированное положение */ --}}
+	{{-- bottom: 0; /* Прижимаем к низу экрана */ --}}
+{{-- } --}}
+

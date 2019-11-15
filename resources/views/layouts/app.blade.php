@@ -18,32 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <style>
-		body {
-			background-image: url(/images/header.jpg);
-			color: white;
-		}
-		.nav a {
-			color: white;
-		}
-		.dropdown-menu {
-			background-color: transparent !important;
-		}
-		.dropdown-item:active {
-			background-color: transparent !important;
-		}
-		.dropdown-item:hover {
-			background-color: transparent !important;
-		}
-		.modal-windows {
-			background-color: black;
-		}
-		{{-- footer { --}}
-			{{-- position: fixed; /* Фиксированное положение */ --}}
-			{{-- bottom: 0; /* Прижимаем к низу экрана */ --}}
-		{{-- } --}}
-    </style>
+	@if (\Request::route()->named('home'))
+		<link href="{{ asset('css/myStylesForHome.css') }}" rel="stylesheet">
+	@elseif (\Request::route()->named('main'))
+		<link href="{{ asset('css/myStylesForMain.css') }}" rel="stylesheet">
+	@endif
 
 </head>
 <body>
