@@ -52,7 +52,7 @@
 		<div class="container-fluid">
 			<div class="row">
 			    <div class="col-sm-1">
-					<img src="{{ asset('/images/logo.png') }} " style="width: 100%">
+					<a href="{{ route('main') }}"><img src="{{ asset('/images/logo.png') }} " style="width: 100%"></a>
 				</div>
 				<nav class="col-sm-8">
 					<ul class="nav justify-content-center">
