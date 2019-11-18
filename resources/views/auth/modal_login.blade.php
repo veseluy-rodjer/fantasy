@@ -11,7 +11,7 @@
         
 		    <!-- Modal body -->
 			<div class="modal-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form id="n_login" method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
