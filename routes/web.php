@@ -13,6 +13,14 @@
 
 Auth::routes(['verify' => true]);
 
+Route::get('/login', function() {
+	return abort(404);
+})->name('login');
+
+Route::get('/register', function() {
+	return abort(404);
+})->name('register');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::delete('admin/tests/arr-delete', 'Admin\TestController@arrDelete')->name('tests.arrDelete');
