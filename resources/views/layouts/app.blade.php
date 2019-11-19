@@ -29,6 +29,9 @@
 <body>
 <!-- HEADER -->
 	<header class="header">
+
+		<div id="status-login" style="display: none">{{ session('statusLogin') ?? null }}</div>
+
 		<div class="container-fluid">
 			<div class="row">
 			    <div class="col-sm-1">
