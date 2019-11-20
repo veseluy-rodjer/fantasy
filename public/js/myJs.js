@@ -14,16 +14,18 @@ window.onload = function() {
 		});
 		let result = await response.json();
 		if (result.statusLogin === true) {
-			document.location.href = result.prevHttp;
+			if (currUrl.textContent != '') {
+				return document.location.href = currUrl.textContent;
+			};
+			return document.location.href = result.prevHttp;
 		}
+		console.log(result.errors);
 	}
 
 	// popup modal login
-	let statusLogin = document.querySelector('#status-login');
-	if (statusLogin.textContent == true) {
+	let currUrl = document.querySelector('#curr-url');
+	if (currUrl.textContent != '') {
 		let modalLogin = document.querySelector('#n-modal-login');
 		modalLogin.click();
-		console.log(modalLogin);
 	};
-
 }

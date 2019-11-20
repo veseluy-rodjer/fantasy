@@ -30,7 +30,7 @@
 <!-- HEADER -->
 	<header class="header">
 
-		<div id="status-login" style="display: none">{{ session('statusLogin') ?? null }}</div>
+		<div id="curr-url" style="display: none">{{ session('currUrl') ?? null }}</div>
 
 		<div class="container-fluid">
 			<div class="row">
