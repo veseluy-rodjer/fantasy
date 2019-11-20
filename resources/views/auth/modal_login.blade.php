@@ -11,8 +11,7 @@
         
 		    <!-- Modal body -->
 			<div class="modal-body">
-                    <form id="n_login" method="POST" action="{{ route('login') }}">
-                        @csrf
+                    <form id="n-login-form" method="POST" action="#">
 
                         <div class="form-group row">
                             <label for="login-email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>

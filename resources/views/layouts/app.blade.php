@@ -57,11 +57,11 @@
 					<ul class="nav justify-content-center">
 						@guest
 							<li class="nav-item">
-								<a class="nav-link" data-toggle="modal" href="#modal-login">{{ __('Login') }}</a>
+								<a id="n-modal-login" class="nav-link" data-toggle="modal" href="#modal-login">{{ __('Login') }}</a>
 							</li>
 							@if (Route::has('register'))
 								<li class="nav-item">
-									<a class="nav-link" data-toggle="modal" href="#modal-register">{{ __('Register') }}</a>
+									<a id="n-modal-register" class="nav-link" data-toggle="modal" href="#modal-register">{{ __('Register') }}</a>
 								</li>
 							@endif
 						@else
