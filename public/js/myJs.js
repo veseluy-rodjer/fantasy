@@ -7,6 +7,7 @@ window.onload = function() {
 		let route = '{{ route("login") }}';
 		let response = await fetch('login', {
 		    headers: {
+				'Accept': 'application/json',
 			    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 			},
 			method: 'POST',
@@ -19,7 +20,15 @@ window.onload = function() {
 			};
 			return document.location.href = result.prevHttp;
 		}
-		console.log(result.errors);
+		else if (null != result.errors) {
+			let errors = result.errors;
+			console.log(errors);
+			for (let[key, val] of errors) {
+				let elem = document.querySelector('#login-' + key);
+				elem.insertAdjacentHTML('afterend', '<span class="invalid-feedback" role="alert"><strong>' + val + '</strong></span>');
+
+			}
+		}
 	}
 
 	// popup modal login
