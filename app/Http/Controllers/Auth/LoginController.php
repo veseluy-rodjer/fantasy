@@ -53,6 +53,22 @@ class LoginController extends Controller
     }
 
     /**
+     * Validate the user login request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return void
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    protected function validateLogin(Request $request)
+    {
+        $request->validate([
+            $this->username() => 'required|string|email',
+            'password' => 'required|string',
+        ]);
+    }
+
+    /**
      * Show the application's login form.
      *
      * @return \Illuminate\Http\Response
