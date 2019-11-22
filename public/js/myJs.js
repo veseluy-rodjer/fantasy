@@ -14,6 +14,10 @@ window.onload = function() {
 			body: new FormData(loginForm)
 		});
 		let result = await response.json();
+		elementErrors = document.querySelectorAll('.invalid-feedback');
+		for (let elementError of elementErrors) {
+			elementError.remove();
+		}
 		if (result.statusLogin === true) {
 			if (currUrl.textContent != '') {
 				return document.location.href = currUrl.textContent;
@@ -22,8 +26,7 @@ window.onload = function() {
 		}
 		else if (null != result.errors) {
 			let errors = result.errors;
-			console.log(errors);
-			for (let[key, val] of errors) {
+			for (let [key, val] of Object.entries(errors)) {
 				let elem = document.querySelector('#login-' + key);
 				elem.insertAdjacentHTML('afterend', '<span class="invalid-feedback" role="alert"><strong>' + val + '</strong></span>');
 
