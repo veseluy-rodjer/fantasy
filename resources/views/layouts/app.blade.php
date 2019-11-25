@@ -27,6 +27,11 @@
 
 </head>
 <body>
+
+	@include('auth.modal_login')
+	@include('auth.modal_register')
+	@include('auth.modal_verify')
+
 <!-- HEADER -->
 	<header class="header">
 
@@ -126,10 +131,6 @@
 			</div>
 		</div>
 	</footer>  
-
-	@include('auth.modal_login')
-	@include('auth.modal_register')
-	@include('auth.modal_verify')
 
 </body>
 </html>
