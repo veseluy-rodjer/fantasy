@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/myJs.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,40 +19,30 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <style>
-		body {
-			background-image: url(/images/header.jpg);
-			color: white;
-		}
-		.nav a {
-			color: white;
-		}
-		.dropdown-menu {
-			background-color: transparent !important;
-		}
-		.dropdown-item:active {
-			background-color: transparent !important;
-		}
-		.dropdown-item:hover {
-			background-color: transparent !important;
-		}
-		{{-- footer { --}}
-			{{-- position: fixed; /* Фиксированное положение */ --}}
-			{{-- bottom: 0; /* Прижимаем к низу экрана */ --}}
-		{{-- } --}}
-    </style>
+	@if (\Request::route()->named('home'))
+		<link href="{{ asset('css/myStylesForHome.css') }}" rel="stylesheet">
+	@elseif (\Request::route()->named('main'))
+		<link href="{{ asset('css/myStylesForMain.css') }}" rel="stylesheet">
+	@endif
 
 </head>
 <body>
+
+	@include('auth.modal_login')
+	@include('auth.modal_register')
+	@include('auth.modal_verify')
+
 <!-- HEADER -->
 	<header class="header">
+
+		<div id="curr-url" style="display: none">{{ session('currUrl') ?? null }}</div>
+
 		<div class="container-fluid">
 			<div class="row">
-			    <div class="col-sm-2">
-					<img src="{{ asset('/images/logo.png') }} " style="height: 100px">
+			    <div class="col-sm-1">
+					<a href="{{ route('main') }}"><img src="{{ asset('/images/logo.png') }} " style="width: 100%"></a>
 				</div>
-				<nav class="col-sm-7">
+				<nav class="col-sm-8">
 					<ul class="nav justify-content-center">
 						<li class="nav-item">
 							<a class="nav-link" href="#">О сайте</a>
@@ -63,7 +54,7 @@
 						    <a class="nav-link" href="#">Отзывы</a>
 						</li>
 						<li class="nav-item">
-						    <a class="nav-link disabled" href="#">Disabled</a>
+							<a class="nav-link" href="{{ route('home') }}">Личный кабинет</a>
 						</li>
 					</ul>
 				</nav>
@@ -71,11 +62,11 @@
 					<ul class="nav justify-content-center">
 						@guest
 							<li class="nav-item">
-								<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+								<a id="n-modal-login" class="nav-link" data-toggle="modal" href="#modal-login">{{ __('Login') }}</a>
 							</li>
 							@if (Route::has('register'))
 								<li class="nav-item">
-									<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+									<a id="n-modal-register" class="nav-link" data-toggle="modal" href="#modal-register">{{ __('Register') }}</a>
 								</li>
 							@endif
 						@else
@@ -107,7 +98,11 @@
 		<div class="container-fluid">
 			<div class="row">
 				<aside class="col-sm-2">
-					@include('layouts.aside_left')
+					@if (\Request::route()->named('home'))
+						@include('layouts.aside_left_home')
+					@else
+						@include('layouts.aside_left')
+					@endif
 				</aside>
 				<article class="col-sm-8">
 					@yield('content')

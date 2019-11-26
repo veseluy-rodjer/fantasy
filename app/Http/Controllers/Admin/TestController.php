@@ -94,10 +94,10 @@ class TestController extends Controller
             Storage::makeDirectory($path );
             Image::make($request->photo)->resize(120, 120, function ($constraint) {
                 $constraint->aspectRatio();
-            })->save(public_path($path . $photoName));
+            })->save(storage_path('app/public' . $path . $photoName));
             Image::make($request->photo)->resize(300, 300, function ($constraint) {
                 $constraint->aspectRatio();
-            })->save(public_path($path . 'big' . $photoName));
+            })->save(storage_path('app/public' . $path . 'big' . $photoName));
         }
 
         return redirect()->route('tests.index')->with('flash_message', 'Test added!');

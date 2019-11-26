@@ -46,6 +46,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+	    if ($exception instanceof \Illuminate\Auth\AuthenticationException) {
+			$currUrl = url()->full();
+		    return back()->with('currUrl', $currUrl);
+		}
         return parent::render($request, $exception);
     }
 }
