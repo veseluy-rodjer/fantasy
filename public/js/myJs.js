@@ -74,7 +74,7 @@ window.onload = function() {
 			body: new FormData(registerForm)
 		});
 		let result = await response.json();
-		elementErrors = document.querySelectorAll('.invalid-feedback');
+		let elementErrors = document.querySelectorAll('.invalid-feedback');
 		for (let elementError of elementErrors) {
 			elementError.remove();
 		}
