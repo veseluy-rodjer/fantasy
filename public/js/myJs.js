@@ -1,5 +1,9 @@
 window.onload = function() {
 
+	let modalLoginQuery = $('#modal-login');
+	let modalRegisterQuery = $('#modal-register');
+	let modalVerifyQuery = $('#modal-verify');
+
 	// send login form to server
 	let loginForm = document.querySelector('#n-login-form');
 	loginForm.onsubmit = async function(e) {
@@ -14,7 +18,7 @@ window.onload = function() {
 			body: new FormData(loginForm)
 		});
 		let result = await response.json();
-		elementErrors = document.querySelectorAll('.invalid-feedback');
+		let	elementErrors = document.querySelectorAll('.invalid-feedback');
 		for (let elementError of elementErrors) {
 			elementError.remove();
 		}
@@ -37,9 +41,24 @@ window.onload = function() {
 	// popup modal login
 	let currUrl = document.querySelector('#curr-url');
 	if (currUrl.textContent != '') {
-		let modalLogin = document.querySelector('#n-modal-login');
-		modalLogin.click();
+		modalLoginQuery.modal('show');
 	}
+
+	// clean modal login with close it
+	modalLoginQuery.on('hidden.bs.modal', function() {
+		let	elementErrors = document.querySelectorAll('.invalid-feedback');
+		for (let elementError of elementErrors) {
+			elementError.remove();
+		}
+	});
+
+	// clean modal register with close it
+	modalRegisterQuery.on('hidden.bs.modal', function() {
+		let	elementErrors = document.querySelectorAll('.invalid-feedback');
+		for (let elementError of elementErrors) {
+			elementError.remove();
+		}
+	});
 
 	// send register form to server
 	let registerForm = document.querySelector('#n-register-form');

@@ -1,5 +1,5 @@
 <!-- The Modal -->
-<div class="modal fade" id="modal-login" tabindex='-1'>
+<div class="modal fade" id="modal-verify" tabindex='-1'>
 	<div class="modal-dialog">
 		<div class="modal-content modal-windows">
       
