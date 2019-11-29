@@ -5,7 +5,7 @@
       
 	        <!-- Modal Header -->
 		    <div class="modal-header">
-				<h4 class="modal-title mx-auto">{{ __('Login') }}</h4>
+				<h4 class="modal-title mx-auto">{{ __('Verify Your Email Address') }}</h4>
 				<button type="button" class="close text-white" data-dismiss="modal">×</button>
 	        </div>
         

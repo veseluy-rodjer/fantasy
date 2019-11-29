@@ -44,6 +44,12 @@ window.onload = function() {
 		modalLoginQuery.modal('show');
 	}
 
+	// popup modal verify
+	let unverifiedRedirect = document.querySelector('#unverified-redirect');
+	if (unverifiedRedirect.textContent != '') {
+		modalVerifyQuery.modal('show');
+	}
+
 	// clean modal login with close it
 	modalLoginQuery.on('hidden.bs.modal', function() {
 		let	elementErrors = document.querySelectorAll('.invalid-feedback');

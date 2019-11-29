@@ -36,6 +36,7 @@
 	<header class="header">
 
 		<div id="curr-url" style="display: none">{{ session('currUrl') ?? null }}</div>
+		<div id="unverified-redirect" style="display: none">{{ session('unverifiedRedirect') ?? null }}</div>
 
 		<div class="container-fluid">
 			<div class="row">
