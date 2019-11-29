@@ -41,6 +41,17 @@ class VerificationController extends Controller
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }
 
+	/**
+     * Where to redirect users after verification.
+     *
+     * @var string
+	 */
+	public function redirectTo()
+	{
+		return route('home');
+	}
+	
+
 	    /**
      * Mark the authenticated user's email address as verified.
      *
