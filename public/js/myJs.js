@@ -73,18 +73,17 @@ window.onload = function() {
 			method: 'POST',
 			body: new FormData(registerForm)
 		});
+		if (response.status == '403') {
+			modalRegisterQuery.modal('hide');
+			modalVerifyQuery.modal('show');
+			return;
+		}
 		let result = await response.json();
 		let elementErrors = document.querySelectorAll('.invalid-feedback');
 		for (let elementError of elementErrors) {
 			elementError.remove();
 		}
-		if (result.statusregister === true) {
-			if (currUrl.textContent != '') {
-				return document.location.href = currUrl.textContent;
-			};
-			return document.location.href = result.prevHttp;
-		}
-		else if (null != result.errors) {
+		if (null != result.errors) {
 			let errors = result.errors;
 			for (let [key, val] of Object.entries(errors)) {
 				let elem = document.querySelector('#register-' + key);
