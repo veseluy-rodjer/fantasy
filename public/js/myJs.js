@@ -50,6 +50,12 @@ window.onload = function() {
 		modalVerifyQuery.modal('show');
 	}
 
+	// popup modal resent
+	let resentRedirect = document.querySelector('#resent-redirect');
+	if (resentRedirect.textContent != '') {
+		modalVerifyQuery.modal('show');
+	}
+
 	// clean modal login with close it
 	modalLoginQuery.on('hidden.bs.modal', function() {
 		let	elementErrors = document.querySelectorAll('.invalid-feedback');

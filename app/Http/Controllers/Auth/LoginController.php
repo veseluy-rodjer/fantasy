@@ -67,27 +67,5 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
     }
-
-    /**
-     * Show the application's login form.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    // public function showLoginForm()
-    // {
-		// $prevHttp = url()->previous();
-//
-        // return response()->view('auth.login')->cookie('prevHttp', $prevHttp, 60);
-    // }
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-	// protected function redirectTo()
-	// {
-		// return \Cookie::get('prevHttp');
-	// }
-	
 }
+

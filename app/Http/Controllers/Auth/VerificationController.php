@@ -51,8 +51,7 @@ class VerificationController extends Controller
 		return route('home');
 	}
 	
-
-	    /**
+	/**
      * Mark the authenticated user's email address as verified.
      *
      * @param  \Illuminate\Http\Request  $request
