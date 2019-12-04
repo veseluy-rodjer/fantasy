@@ -62,6 +62,12 @@ window.onload = function() {
 		for (let elementError of elementErrors) {
 			elementError.remove();
 		}
+		let loginEmail = document.querySelector('#login-email')
+		let loginPassword = document.querySelector('#login-password')
+		let loginRemember = document.querySelector('#login-remember')
+		loginEmail.value = '';
+		loginPassword.value = '';
+		loginRemember.checked = false;
 	});
 
 	// clean modal register with close it
@@ -70,6 +76,14 @@ window.onload = function() {
 		for (let elementError of elementErrors) {
 			elementError.remove();
 		}
+		let registerName = document.querySelector('#register-name')
+		let registerEmail = document.querySelector('#register-email')
+		let registerPassword = document.querySelector('#register-password')
+		let registerPasswordConfirm = document.querySelector('#register-password-confirm')
+		registerName.value = '';
+		registerEmail.value = '';
+		registerPassword.value = '';
+		registerPasswordConfirm.value = '';
 	});
 
 	// send register form to server
