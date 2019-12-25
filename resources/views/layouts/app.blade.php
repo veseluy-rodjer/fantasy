@@ -26,7 +26,7 @@
 	@endif
 
 </head>
-<body>
+<body data-curr-url="{{ session('currUrl') ?? null }}" data-unverified-redirect="{{ session('unverifiedRedirect') ?? null }}" data-resent-redirect="{{ session('resent') ?? null }}">
 
 	@include('auth.modal_login')
 	@include('auth.modal_register')
@@ -34,10 +34,6 @@
 
 <!-- HEADER -->
 	<header class="header">
-
-		<div id="curr-url" style="display: none">{{ session('currUrl') ?? null }}</div>
-		<div id="unverified-redirect" style="display: none">{{ session('unverifiedRedirect') ?? null }}</div>
-		<div id="resent-redirect" style="display: none">{{ session('resent') ?? null }}</div>
 
 		<div class="container-fluid">
 			<div class="row">

@@ -39,20 +39,20 @@ window.onload = function() {
 	}
 
 	// popup modal login
-	let currUrl = document.querySelector('#curr-url');
-	if (currUrl.textContent != '') {
+	let currUrl = document.querySelector('body').dataset.currUrl;
+	if (currUrl != '') {
 		modalLoginQuery.modal('show');
 	}
 
 	// popup modal verify
-	let unverifiedRedirect = document.querySelector('#unverified-redirect');
-	if (unverifiedRedirect.textContent != '') {
+	let unverifiedRedirect = document.querySelector('body').dataset.unverifiedRedirect;
+	if (unverifiedRedirect != '') {
 		modalVerifyQuery.modal('show');
 	}
 
 	// popup modal resent
-	let resentRedirect = document.querySelector('#resent-redirect');
-	if (resentRedirect.textContent != '') {
+	let resentRedirect = document.querySelector('body').dataset.resentRedirect;
+	if (resentRedirect != '') {
 		modalVerifyQuery.modal('show');
 	}
 
