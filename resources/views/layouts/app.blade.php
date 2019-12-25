@@ -26,7 +26,7 @@
 	@endif
 
 </head>
-<body>
+<body data-curr-url="{{ session('currUrl') ?? null }}" data-unverified-redirect="{{ session('unverifiedRedirect') ?? null }}" data-resent-redirect="{{ session('resent') ?? null }}" data-route-login="{{ route("login") }}" data-route-register="{{ route("register") }}">
 
 	@include('auth.modal_login')
 	@include('auth.modal_register')
@@ -34,8 +34,6 @@
 
 <!-- HEADER -->
 	<header class="header">
-
-		<div id="curr-url" style="display: none">{{ session('currUrl') ?? null }}</div>
 
 		<div class="container-fluid">
 			<div class="row">
@@ -45,16 +43,16 @@
 				<nav class="col-sm-8">
 					<ul class="nav justify-content-center">
 						<li class="nav-item">
-							<a class="nav-link" href="#">О сайте</a>
+							<a class="nav-link" href="#">@lang('About the site')</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Как это работает</a>
+							<a class="nav-link" href="#">@lang('How it works')</a>
 						</li>
 						<li class="nav-item">
-						    <a class="nav-link" href="#">Отзывы</a>
+						    <a class="nav-link" href="#">@lang('Reviews')</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ route('home') }}">Личный кабинет</a>
+							<a class="nav-link" href="{{ route('home') }}">@lang('Personal area')</a>
 						</li>
 					</ul>
 				</nav>
