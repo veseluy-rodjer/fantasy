@@ -46,10 +46,10 @@ class VerificationController extends Controller
      *
      * @var string
 	 */
-	public function redirectTo()
-	{
-		return route('home');
-	}
+	// public function redirectTo()
+	// {
+		// return route('home');
+	// }
 	
 	/**
      * Mark the authenticated user's email address as verified.
