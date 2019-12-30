@@ -67,5 +67,16 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
     }
+
+    /**
+     * The user has logged out of the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return mixed
+     */
+    protected function loggedOut(Request $request)
+    {
+		return redirect()->route('main');
+    }
 }
 
