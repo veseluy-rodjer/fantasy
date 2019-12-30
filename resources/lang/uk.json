@@ -6,6 +6,13 @@
 	"About the site": "О сайті",
 	"How it works": "Як це працює",
 	"Reviews": "Відгуки",
-	"Personal area": "Особистий кабінет"
+	"Personal area": "Особистий кабінет",
+	"Login": "Логiн",
+	"Register": "Реєстрація",
+	"E-Mail Address": "Електронна адреса",
+	"Password": "Пароль",
+	"Remember Me": "Щоб мене запам’ятали",
+	"Forgot Your Password": "Забули свій пароль",
+	"": "Личный кабинет"
 
 }
