@@ -3,6 +3,7 @@ window.onload = function() {
 	let modalLoginQuery = $('#modal-login');
 	let modalRegisterQuery = $('#modal-register');
 	let modalVerifyQuery = $('#modal-verify');
+	let modalEmailQuery = $('#modal-email');
 
 	// popup modal login
 	let currUrl = document.querySelector('body').dataset.currUrl;
@@ -20,6 +21,14 @@ window.onload = function() {
 	let resentRedirect = document.querySelector('body').dataset.resentRedirect;
 	if (resentRedirect != '') {
 		modalVerifyQuery.modal('show');
+	}
+
+	// popup modal email
+	let openModalEmail = document.querySelector('#open-modal-email');
+	openModalEmail.onclick = function(e) {
+		e.preventDefault();
+		modalLoginQuery.modal('hide');
+		modalEmailQuery.modal('show');
 	}
 
 	// send login form to server
@@ -84,6 +93,12 @@ window.onload = function() {
 		registerEmail.value = '';
 		registerPassword.value = '';
 		registerPasswordConfirm.value = '';
+	});
+
+	// clean modal email with close it
+	modalEmailQuery.on('hidden.bs.modal', function() {
+		let resetEmail = document.querySelector('#reset-email')
+		resetEmail.value = '';
 	});
 
 	// send register form to server

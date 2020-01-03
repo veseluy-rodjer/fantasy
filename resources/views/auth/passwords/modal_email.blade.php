@@ -1,11 +1,11 @@
 <!-- The Modal -->
-<div class="modal fade" id="modal-verify" tabindex='-1'>
+<div class="modal fade" id="modal-email" tabindex='-1'>
 	<div class="modal-dialog">
 		<div class="modal-content modal-windows">
       
 	        <!-- Modal Header -->
 		    <div class="modal-header">
-				<h4 class="modal-title mx-auto">{{ __('Verify Your Email Address') }}</h4>
+				<h4 class="modal-title mx-auto">{{ __('Reset Password') }}</h4>
 				<button type="button" class="close text-white" data-dismiss="modal">×</button>
 	        </div>
         
@@ -24,7 +24,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="reset-email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">

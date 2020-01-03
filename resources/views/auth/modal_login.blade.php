@@ -60,7 +60,7 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link text-white" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link text-white" id="open-modal-email" href="#">
                                         {{ __('Forgot Your Password') . '?' }}
                                     </a>
                                 @endif
