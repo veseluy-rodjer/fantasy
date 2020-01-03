@@ -31,6 +31,7 @@
 	@include('auth.modal_login')
 	@include('auth.modal_register')
 	@include('auth.modal_verify')
+	@include('auth.passwords.modal_email')
 
 <!-- HEADER -->
 	<header class="header">
