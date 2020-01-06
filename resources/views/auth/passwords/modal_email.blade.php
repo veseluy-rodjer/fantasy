@@ -11,20 +11,14 @@
         
 		    <!-- Modal body -->
 			<div class="modal-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
-					<form method="POST" @if (session('status')) hidden @endif action="{{ route('password.email') }}">
-                        @csrf
+					<form id="n-email-form" method="POST" action="#">
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="reset-email" type="text" class="form-control" name="email" value="" required autocomplete="email" autofocus>
+                                <input id="reset-email" type="text" class="form-control" name="email" value="" autocomplete="email" autofocus>
 
                             </div>
                         </div>

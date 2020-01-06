@@ -26,7 +26,7 @@
 	@endif
 
 </head>
-<body data-curr-url="{{ session('currUrl') ?? null }}" data-unverified-redirect="{{ session('unverifiedRedirect') ?? null }}" data-resent-redirect="{{ session('resent') ?? null }}" data-route-login="{{ route("login") }}" data-route-register="{{ route("register") }}">
+<body data-curr-url="{{ session('currUrl') ?? null }}" data-unverified-redirect="{{ session('unverifiedRedirect') ?? null }}" data-resent-redirect="{{ session('resent') ?? null }}" data-route-login="{{ route("login") }}" data-route-register="{{ route("register") }}" data-route-reset="{{ route("password.email") }}">
 
 	@include('auth.modal_login')
 	@include('auth.modal_register')

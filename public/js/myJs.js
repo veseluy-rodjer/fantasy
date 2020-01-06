@@ -99,6 +99,7 @@ window.onload = function() {
 	modalEmailQuery.on('hidden.bs.modal', function() {
 		let resetEmail = document.querySelector('#reset-email')
 		resetEmail.value = '';
+		emailForm.hidden = false;
 	});
 
 	// send register form to server
@@ -128,6 +129,43 @@ window.onload = function() {
 			let errors = result.errors;
 			for (let [key, val] of Object.entries(errors)) {
 				let elem = document.querySelector('#register-' + key);
+				elem.insertAdjacentHTML('afterend', '<span class="invalid-feedback" role="alert"><strong>' + val + '</strong></span>');
+
+			}
+		}
+	}
+
+	// send email form to server
+	let emailForm = document.querySelector('#n-email-form');
+	emailForm.onsubmit = async function(e) {
+		e.preventDefault();
+		let route = document.querySelector('body').dataset.routeReset;
+		let response = await fetch(route, {
+		    headers: {
+				'Accept': 'application/json',
+			    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			},
+			method: 'POST',
+			body: new FormData(emailForm)
+		});
+		let result = await response.json();
+		let	elementErrors = document.querySelectorAll('.invalid-feedback');
+		for (let elementError of elementErrors) {
+			elementError.remove();
+		}
+		if (null != result.statusEmail) {
+			let div = document.createElement('div');
+			div.class = 'alert alert-success';
+			div.role = 'alert';
+			div.textContent = result.statusEmail;
+			emailForm.before(div);
+			emailForm.hidden = true;
+		}
+		else if (null != result.errors) {
+			let errors = result.errors;
+			console.log(result);
+			for (let [key, val] of Object.entries(errors)) {
+				let elem = document.querySelector('#reset-' + key);
 				elem.insertAdjacentHTML('afterend', '<span class="invalid-feedback" role="alert"><strong>' + val + '</strong></span>');
 
 			}
