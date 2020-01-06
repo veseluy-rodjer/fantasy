@@ -44,6 +44,18 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+		$locale = \App::getLocale();
+        $this->notify((new \App\Notifications\ResetPassword($token))->locale($locale));
+    }
+
+    /**
      * Get the titles for the user.
      */
     public function titles()
