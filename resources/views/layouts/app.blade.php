@@ -57,7 +57,10 @@
 						</li>
 					</ul>
 				</nav>
-				<nav class="col-sm-3">
+				<div class="col-sm-1">
+					@include('locales.locale')
+				</div>
+				<nav class="col-sm-2">
 					<ul class="nav justify-content-center">
 						@guest
 							<li class="nav-item">
