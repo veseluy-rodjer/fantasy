@@ -163,7 +163,6 @@ window.onload = function() {
 		}
 		else if (null != result.errors) {
 			let errors = result.errors;
-			console.log(result);
 			for (let [key, val] of Object.entries(errors)) {
 				let elem = document.querySelector('#reset-' + key);
 				elem.insertAdjacentHTML('afterend', '<span class="invalid-feedback" role="alert"><strong>' + val + '</strong></span>');
