@@ -57,11 +57,11 @@
 						</li>
 					</ul>
 				</nav>
-				<div class="col-sm-1">
+				<div class="col-sm-1" style="text-align: right">
 					@include('locales.locale')
 				</div>
 				<nav class="col-sm-2">
-					<ul class="nav justify-content-center">
+					<ul class="nav justify-content-left">
 						@guest
 							<li class="nav-item">
 								<a id="n-modal-login" class="nav-link" data-toggle="modal" href="#modal-login">{{ __('Login') }}</a>

@@ -1,7 +1,7 @@
 <p>
 	<select id="select-language" name="language">
 		@foreach (config('languages.languages') as $lang)
-			<option {{ \App::getLocale() == $lang ? 'selected' : null }}>{{ $lang }}</option>
+			<option {{ \App::getLocale() == $lang ? 'selected' : null }}><span class="fas fa-band-aid">{{ $lang }}</span></option>
 		@endforeach
 	</select>
 </p>
