@@ -25,6 +25,9 @@
 		<link href="{{ asset('css/myStylesForMain.css') }}" rel="stylesheet">
 	@endif
 
+    <!-- Styles flag-icon-->
+    <link href="{{ asset('flag-icon-css-master/css/flag-icon.css') }}" rel="stylesheet">
+
 </head>
 <body data-curr-url="{{ session('currUrl') ?? null }}" data-unverified-redirect="{{ session('unverifiedRedirect') ?? null }}" data-resent-redirect="{{ session('resent') ?? null }}" data-route-login="{{ route("login") }}" data-route-register="{{ route("register") }}" data-route-reset="{{ route("password.email") }}">
 
