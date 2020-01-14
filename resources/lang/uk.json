@@ -17,6 +17,7 @@
 	"You are receiving this email because we received a password reset request for your account.": "Ви отримали цей лист, тому що ми отримали запит на зміну пароля для вашого облікового запису.",
 	"Reset Password": "Змінити пароль",
 	"This password reset link will expire in :count minutes.": "Термін дії посилання для зміни пароля закінчується через :count хвилин.",
-	"If you did not request a password reset, no further action is required.": "Якщо ви не запитували зміну пароля, ніяких подальших дій не потрібно."
+	"If you did not request a password reset, no further action is required.": "Якщо ви не запитували зміну пароля, ніяких подальших дій не потрібно.",
+	"Send Password Reset Link": "Надіслати посилання для зміни пароля"
 
 }
