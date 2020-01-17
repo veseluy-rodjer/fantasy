@@ -27,7 +27,9 @@ Route::get('/password/reset', function() {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::redirect('admin', 'admin/tests');
+// Route::get('/admin', function() {
+	// return redirect()->route('tests.index');
+// });
 
 Route::delete('admin/tests/arr-delete', 'Admin\TestController@arrDelete')->name('tests.arrDelete');
 Route::resource('admin/tests', 'Admin\TestController');
