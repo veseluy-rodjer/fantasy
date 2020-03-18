@@ -66,7 +66,7 @@ class VerificationController extends Controller
 
 		$lang = $request->lang;
 		\App::setLocale($lang);
-		if ($lang == \Config('languages.mainLanguage')) {
+		if ($lang == config('languages.mainLanguage')) {
 			$lang = null;
 		}
         if ($request->user()->hasVerifiedEmail()) {

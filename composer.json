@@ -15,7 +15,6 @@
         "laravel/tinker": "^1.0",
         "predis/predis": "^1.1",
         "tamayo/laravel-scout-elastic": "^5.0",
-        "veseluy-rodjer/laravel-comments": "^2.2",
         "veseluy-rodjer/supercrud": "dev-master"
     },
     "require-dev": {
